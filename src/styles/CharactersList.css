@@ -1,0 +1,9 @@
+.table {
+  background: #ffbe0f;
+  margin-top: 2em;
+}
+
+td,
+th {
+  padding: 1em !important;
+}

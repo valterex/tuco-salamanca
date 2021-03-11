@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment, useState } from "react";
+import { Router } from "@reach/router";
+import { useFetch } from "./useFetch";
+import "./App.css";
 
-function App() {
+import Characters from "./components/Characters";
+import Main from "./components/Main";
+import Navigation from "./shared/Navigation";
+
+const App = () => {
+  const [charactersQuery, setCharactersQuery] = useState("characters");
+
+  const baseUrl = "https://www.breakingbadapi.com/api";
+
+  const charactersUrl =
+    charactersQuery && `${baseUrl}/${charactersQuery}?limit=9&offset=0`;
+
+  const { status, data, error } = useFetch(charactersUrl);
+
+  const characters = data;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Navigation />
+      <Router>
+        <Main path="/" />
+        <Characters path="/characters" characters={characters} />
+      </Router>
+    </Fragment>
   );
-}
+};
 
 export default App;

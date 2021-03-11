@@ -4,7 +4,7 @@ import "../styles/Navigation.css";
 const Navigation = () => {
   return (
     <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid">
+      <div className="container">
         <button
           className="navbar-toggler"
           type="button"
