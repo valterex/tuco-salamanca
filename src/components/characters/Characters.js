@@ -25,10 +25,12 @@ const Characters = () => {
     // get all seasons
     const charAppearances = characters.map((character) => character.appearance);
 
-    const appearances = charAppearances.reduce(
+    const reducedAppearances = charAppearances.reduce(
       (accumulator, currentValue) => accumulator.concat(currentValue),
       []
     );
+
+    const appearances = new Set(reducedAppearances);
 
     setSeasons(appearances);
   }, [characters]);
