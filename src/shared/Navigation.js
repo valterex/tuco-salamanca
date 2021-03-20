@@ -3,33 +3,22 @@ import "../styles/Navigation.css";
 
 const Navigation = () => {
   return (
-    <ul className="nav">
-      <li className="nav-item">
-        <a className="nav-link active" aria-current="page" href="haha">
-          Active
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="haha">
-          Link
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="haha">
-          Link
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          className="nav-link disabled"
-          href="haha"
-          tabindex="-1"
-          aria-disabled="true"
-        >
-          Disabled
-        </a>
-      </li>
-    </ul>
+    <nav>
+      <ul>
+        <li>
+          <Link to="/characters">Characters</Link>
+        </li>
+        <li>
+          <Link to="/episodes">Episodes</Link>
+        </li>
+        <li>
+          <Link to="/deaths">Deaths</Link>
+        </li>
+        <li>
+          <Link to="/quotes">Quotes</Link>
+        </li>
+      </ul>
+    </nav>
   );
 };
 
