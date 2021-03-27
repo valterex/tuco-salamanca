@@ -9,5 +9,17 @@ th {
 }
 
 .filters {
+  padding-top: 3%;
   justify-content: center;
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media .content {
+  flex: 1;
+  padding: 10px;
+  color: #ffbe0f;
 }
