@@ -1,4 +1,7 @@
 body {
+  display: flex;
+  flex-direction: column;
   font-family: "Inconsolata", monospace;
   background: #bd2000;
+  overflow-x: hidden !important;
 }
