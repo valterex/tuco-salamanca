@@ -1,7 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
-import { useDropdown } from "../../hooks/useDropdown";
-import { useFetch } from "../../hooks/useFetch";
-import "../../styles/Characters.css";
+import useDropdown from "../hooks/useDropdown";
+import { useFetch } from "../hooks/useFetch";
+import "../styles/Characters.css";
 
 const Characters = () => {
   const [query, setQuery] = useState("characters");
@@ -9,8 +9,8 @@ const Characters = () => {
   const [characterStatus, StatusDropdown] = useDropdown("", statuses);
 
   // fetch characters
-  const baseUrl = "https://www.breakingbadapi.com/api";
-  const url = query && `${baseUrl}/${query}?limit=9&offset=0`;
+  const url =
+    query && `${process.env.REACT_APP_BASE_URL}/${query}?limit=9&offset=0`;
 
   const { status, data, error } = useFetch(url);
   const characters = data;
